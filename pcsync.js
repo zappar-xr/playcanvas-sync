@@ -32,6 +32,7 @@ program
     .description('upload all local files, overwriting their remote counterparts')
     .option('-r, --regexp <regexp>', 'handle files matching the provided regular expression')
     .option('-e, --ext <extensions>', 'handle files with provided extensions')
+    .option('-y, --yes', 'overwrite flag')
     .action(runOverwriteAllRemote);
 
 program
@@ -83,7 +84,12 @@ function runOverwriteAllLocal (cmdObj) {
 
 function runOverwriteAllRemote (cmdObj) {
     CUtils.handleForceRegOpts(cmdObj);
-
+    for(let option of cmdObj.options){
+        if(option.short === '-y'){
+            return new OverwriteAllRemoteWithLocal().run();
+        }
+    }
+    
     SyncUtils.compareAndPrompt(() => {
         return new OverwriteAllRemoteWithLocal().run();
     });

@@ -1,5 +1,9 @@
 # Overview
 
+
+This fork of playcanvas-sync adds the -y flag to skip the confirmations presented by `pushAll`.
+
+
 The `pcsync` and `pcwatch` utilities allow editing copies of
 JavaScript and other textual files of a PlayCanvas project
 locally, on your own computer, in a text editor of your choice.

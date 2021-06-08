@@ -1,7 +1,7 @@
 # Overview
 
 
-This fork of playcanvas-sync adds the -y flag to skip the confirmations presented by `pushAll`.
+This fork of playcanvas-sync adds the `-y` flag to skip the confirmations presented by `pushAll`.
 
 
 The `pcsync` and `pcwatch` utilities allow editing copies of
